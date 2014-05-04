@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="js/angular.min.js"></script>
+	<script src="js/main.js"></script>
+	<link rel=stylesheet href="css/main.css">
+	<title>HelpImTripping.com .:. You're with friends here.</title>
+</head>
+<body ng-app="tripAssist">
+	<section>
+		<a href="http://chat.tripsit.me/?nick=TripAssist?#home,#sanctuary,#tripsit">Immediate Help</a>
+		<p>Click here to get immediate help from friendly people.</p>
+	</section>
+	<section ng-controller="drugsController">
+		<input placeholder="E.g. LSD" type="text" ng-model="drugName">
+		<!-- <select ng-model="drugName" ng-options="drug.name group by drug.category for drug in drugsList">
+			<option value=""></option>
+			option
+		</select> -->
+		<ul id="drugChoices">
+			<li ng-repeat="drug in drugsList | filter:{ name : drugName, category : drugsCategory }">
+				<input type="checkbox" id="{{drug.name}}" ng-model="drug.taken">
+				<label for="{{drug.name}}">
+					<h2>{{drug.name}}</h2>
+					<h3>Type: {{drug.category}}</h3>
+				</label>
+			</li>
+		</ul>
+	</section>
+	<footer>
+		
+	</footer>
+</body>
+</html>
