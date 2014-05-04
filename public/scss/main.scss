@@ -1,0 +1,24 @@
+#drugChoices {
+	li {
+		width: 12.5em;
+		height: 11em;
+		display: inline-block;
+
+		input[type=checkbox] {
+			display: none;
+			visibility: hidden;
+		}
+
+		input[type=checkbox]:checked + label {
+		    background-color: green;
+		}
+
+		label {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+
+}
